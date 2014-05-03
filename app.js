@@ -13,7 +13,7 @@ http.createServer (function(req, res) {
   
   request.get(url, function (err,body,result) {
 
-
+    //~~~
     result = JSON.parse(result);
     result.data.forEach(function (val,idx) {
       if (val.comments != null){

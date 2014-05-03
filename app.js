@@ -35,5 +35,6 @@ http.createServer (function(req, res) {
   });
   datas += "</body></html>";
   console.log("run");
+}).listen(port);
 
 console.log("Server Created\nPort Number : "+port);

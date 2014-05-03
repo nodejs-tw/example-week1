@@ -1,32 +1,42 @@
-/**
- * @overview
- *
- * @author
- * @version 2014/04/26
- */
-
 var http = require("http");
-var port = 1337;
 var request = require("request");
-var url = "http://graph.facebook.com/Boo/photos?type=uploaded";
+var port = 1337;
 
-http.createServer(function (req, res) {
-  res.writeHeader(200, {"Content-Type": "text/html"});
-  
-  var data = "<html><head></head><body>"
-  request.get(url, function (err, body, response) {
 
-    response = JSON.parse(response);
-    response.data.forEach(function (val, idx) {
-      data += "<img src='" + val.images[2].source + "'>";
-    });
-    
-    data += "</body></html>";
-    res.end(data);
-  });
+var url = "https://graph.facebook.com/2014.hsnu.at.ntu/photos?type=uploaded";
+//JSON is a global module not need to require//
+
+
+http.createServer (function(req, res) {
+
+	var datas = "<html><head></head><body>";
+	
+	request.get(url, function (err,body,result) {
+
+
+		result = JSON.parse(result);
+		result.data.forEach(function (val,idx) {
+			if (val.comments != null){
+				datas += "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"
+				
+				//data += "<p>this</p> <img src ='" + val.source + "'><br>";
+				//data += "<td><img src ='" + val.images[3].source + "'></td><br>";
+				//datas += "<p>" + val.images[1].source + "</p>";
+				datas += "<img src ='" + val.images[5].source + "'><br>";
+				val.comments.data.forEach(function (tt,idx){
+				datas += "<h3>" + tt.from.name + "</h3>";
+				datas += "<p>  " + tt.message + "</p>";
+				//console.log(datas);
+				});
+			}
+		});
+		datas += result;
+		res.end(datas);
+	});
+	datas += "</body></html>";
+	console.log("run");
+	console.log(datas);
 
 }).listen(port);
 
-console.log("start server port: " + port);
-
-
+console.log("Server Created\nPort Number : "+port);

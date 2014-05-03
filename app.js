@@ -6,7 +6,7 @@ var url = "https://graph.facebook.com/2014.hsnu.at.ntu/photos?type=uploaded";
 //JSON is a global module not need to require//
 
 
-http.createServer (function(req, res) {
+/*http.createServer (function(req, res) {
 
   var datas = "<html><head></head><body>";
   
@@ -36,5 +36,11 @@ http.createServer (function(req, res) {
   datas += "</body></html>";
   console.log("run");
 }).listen(port);
+*/
+//console.log("Server Created\nPort Number : "+port);
+http.createServer(function(req,res){
+	var datas += "<html><body>hello~~~~</body></html>";
+	res.end(datas);
+}).listen(port);
 
-console.log("Server Created\nPort Number : "+port);
+console.log("Server Created \n");

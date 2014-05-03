@@ -1,65 +1,67 @@
 <html>
-	<head>
-		<style>
-			 .masonry,
-			 .masonry .masonry-brick {
-			 -webkit-transition-duration: 0.7s;
-			 -moz-transition-duration: 0.7s;
-			 -o-transition-duration: 0.7s;
-			 transition-duration: 0.7s;
-			 }
-			.masonry {
-			 -webkit-transition-property: height, width;
-			 -moz-transition-property: height, width;
-			 -o-transition-property: height, width;
-			 transition-property: height, width;
-			 }
-			.masonry .masonry-brick {
-			 -webkit-transition-property: left, right, top;
-			 -moz-transition-property: left, right, top;
-			 -o-transition-property: left, right, top;
-			 transition-property: left, right, top;
-			 }
+    <head>
+        <style>
+             .masonry,
+             .masonry .masonry-brick {
+             -webkit-transition-duration: 0.7s;
+             -moz-transition-duration: 0.7s;
+             -o-transition-duration: 0.7s;
+             transition-duration: 0.7s;
+             }
+            .masonry {
+             -webkit-transition-property: height, width;
+             -moz-transition-property: height, width;
+             -o-transition-property: height, width;
+             transition-property: height, width;
+             }
+            .masonry .masonry-brick {
+             -webkit-transition-property: left, right, top;
+             -moz-transition-property: left, right, top;
+             -o-transition-property: left, right, top;
+             transition-property: left, right, top;
+             }
 
-			.item{
-				display: inline-block;
-				border: 5px solid #38ACEC;
-				
-				border-radius: 20px;
-				padding: 10px auto;
-				margin: 7px 7px;
-				overflow:hidden;
-				/*//width:337px;*/
+            .item{
+                display: inline-block;
+                border: 5px solid #38ACEC;
 
-			}
-			
-			/*.item.H {
-				width: 25%;
-			}
-			.item.W {
-				width: 50%;
-			}*/
-			
-			img {
-				margin: 0 auto;
-			}
-		</style>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
-		
-		<script>
-		$('#_container').imagesLoaded(function () {
-        $('#_container').masonry({
-            // options
-            itemSelector: '.item',
-            columnWidth: 1,
-            //singleMode: true,
-            isOriginTop: true;
-            isFitWidth:true,
-            isAnimated: true
-        	});
-		});
-		</script>
-	</head>
-	<body>
-		<h1>masonry girls!!</h1>
+                border-radius: 20px;
+                padding: 10px auto;
+                margin: 7px 7px;
+                overflow:hidden;
+                /*//width:337px;*/
+
+            }
+
+            /*.item.H {
+                width: 25%;
+            }
+            .item.W {
+                width: 50%;
+            }*/
+
+            img {
+                margin: 0 auto;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+
+        <script>
+        $(document).ready(function () {
+        //    $('#_container').imagesLoaded(function () {
+                $('#_container').masonry({
+                    // options
+                    itemSelector: '.item',
+                    columnWidth: 1,
+                    //singleMode: true,
+                    isOriginTop: true,
+                    isFitWidth:true,
+                    isAnimated: true
+                });
+        //    });
+        });
+        </script>
+    </head>
+    <body>
+        <h1>masonry girls!!</h1>
